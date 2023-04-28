@@ -1,0 +1,36 @@
+/* Chapter 12 Practice 2 project */
+
+body {
+	background-color: lightyellow;
+	text-align: center;
+}
+
+div#mode {
+	background-color: thistle;
+	width: 30%;
+	font-size: 1.7em;
+	text-align: center;
+	margin-right: auto;
+	margin-Left: auto;
+	border:	purple 4px double;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+h1 {
+	color: thistle;
+}
+
+img {
+	display: block;
+	width: 40%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+li {
+	border: 2px red solid;
+	width: 15%;
+	margin-right: auto;
+	margin-left: auto;;
+}

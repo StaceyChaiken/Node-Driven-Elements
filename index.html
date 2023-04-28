@@ -1,0 +1,78 @@
+<! -- Chapter 12 Practice 2 project -- >
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ch 12 Pratice 2</title>
+	<link rel="stylesheet" href="light.css" />
+</head>
+<body>
+	<div id="mode">Switch Modes</div>
+	<br/>
+	<h1>Let's Add Some New Nodes to a List!</h1>
+	<ol></ol>
+	<input type="button" value="Click to Add" />
+	<br/>
+	<br/>
+	<img src="front.png" alt="logos of front end web development languages" />
+	<br/>
+	<input type="button" value="Change Picture" />
+
+	<script>
+		// add event listeners to all the button-like elements
+		document.getElementById("mode").addEventListener("click", switchModes);
+		document.getElementsByTagName("input")[0].addEventListener("click", addItem); 
+		document.getElementsByTagName("input")[1].addEventListener("click", changeImg);
+
+		// definition of the switchModes() function
+		function switchModes() {
+			// variable to store the reference to the <link> element
+			let stylesheet = document.getElementsByTagName("link")[0];
+
+			// analyze the current value of the stylesheet HREF
+			if(stylesheet.getAttribute("href") === "light.css") {
+
+				// if it is currently loading the light stylesheet change it to load the dark stylesheet
+				stylesheet.setAttribute("href", "dark.css");
+				document.getElementById("mode").textContent = "Light Mode";
+
+			} else {
+				// already in dark mode, switch back to light
+				stylesheet.setAttribute("href", "light.css");
+				document.getElementById("mode").textContent = "Dark Mode";
+
+			} // end of if else
+		} // end of the switchModes() function
+
+		// definition of the addItem() function
+		function addItem() {
+
+			//this variable creates the data fragment for a new cell
+			let item = document.createElement("li");
+
+			// this variable creates the data for the text node
+			let itemText = document.createTextNode("I am a new item");
+			// attach the text node to the element node
+			item.appendChild(itemText);
+
+			// take the updated element node and append it to the actual document
+			document.getElementsByTagName("ol")[0].appendChild(item);
+		} // end of the addItem() function
+
+		// definition of the changeTime() function
+		function changeImg() {
+			//variable to store the reference to the <img> element
+			let image = document.getElementsByTagName("img")[0];
+
+			// change the SRC attribute of that <img> element
+			image.setAttribute("src", "java.png");
+
+			document.getElementsByTagName("input")[1].disabled = true;
+
+		} // end of the changeImg() function
+
+	</script>
+</body>
+</html>
